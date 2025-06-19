@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Book</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+  <!-- 🔸 Sticky Responsive Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">🍽️ Recipe Book</div>
+   <!-- Search Input -->
+
+  </nav>
+
+  <main>
+    <section class="form-section">
+      <h2>Add a New Recipe</h2>
+      <form id="recipeForm">
+        <input type="text" id="name" placeholder="Recipe Name" required />
+        <textarea id="ingredients" placeholder="Ingredients" required></textarea>
+        <textarea id="steps" placeholder="Preparation Steps" required></textarea>
+        <input type="file" id="image" accept="image/*" required />
+        <button type="submit">Add Recipe</button>
+      </form>
+    </section>
+
+    <section class="recipes-section">
+      <h2>All Recipes</h2>
+      <div id="recipesContainer" class="recipes-container"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" src="" alt="Recipe Image"/>
+      <h3>Ingredients:</h3>
+      <p id="modalIngredients"></p>
+      <h3>Steps:</h3>
+      <p id="modalSteps"></p>
+      
+    </div>
+    
+  </div>
+  
+<!-- 🔸 Footer with Search -->
+<footer class="footer">
+  <div class="footer-content">
+    <h3>🍽️ Recipe Book</h3>
+    <p>Cook. Create. Share. Your personal cookbook in your browser.</p>
+
+    <!-- 🔍 Footer Search -->
+    <div class="footer-search">
+      <input
+        type="text"
+        id="footerSearchInput"
+        placeholder="Search recipes..."
+      />
+      <button onclick="scrollToTopAndFocus()">Search</button>
+    </div>
+
+
+ 
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Recipe Book. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

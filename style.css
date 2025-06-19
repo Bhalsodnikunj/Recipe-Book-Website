@@ -1,0 +1,312 @@
+/* RESET AND BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🔸 Sticky Responsive Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+ background: linear-gradient(to right, #f500fd, #ffccbc);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+}
+
+.navbar-links li a:hover {
+  opacity: 0.85;
+}
+
+/* 🔸 Responsive Navbar Stack */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0.5rem;
+    gap: 1rem;
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-links li a {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Optional styling for demo sections */
+main {
+  padding: 2rem;
+}
+
+.form-section, .recipes-section {
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+/* HEADER (OPTIONAL SEARCH) */
+header {
+  background-color: #f500fd;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+#searchInput {
+  padding: 0.7rem;
+  width: 90%;
+  max-width: 400px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+/* MAIN SECTIONS */
+main {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* FORM SECTION */
+.form-section {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.form-section h2 {
+  margin-bottom: 1rem;
+  color: #ff7043;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input,
+form textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+form button {
+  background-color: #f500fd;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #f500fd;
+}
+
+/* RECIPE SECTION */
+.recipes-section h2 {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.recipes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  transform: scale(1.02);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.recipe-card h3 {
+  margin-top: 0.8rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* MODAL (POPUP VIEW) */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  overflow-y: auto;
+  max-height: 90vh;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+  margin-top: 1rem;
+  color: #f500fd;
+}
+
+.modal-content p {
+  white-space: pre-line;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+/* 🔸 Footer Styles */
+.footer {
+ background: linear-gradient(to right, #f500fd, #ffccbc);
+  color: white;
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.footer-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-content p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* 🔍 Footer Search Bar */
+.footer-search {
+  margin: 1.2rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-search input {
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  width: 250px;
+  max-width: 80%;
+  outline: none;
+}
+
+.footer-search button {
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  background: linear-gradient(to right, #f500fd, #ffccbc);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer-search button:hover {
+ background: linear-gradient(to right, #f500fd, #ffccbc);
+}
+
+
+/* Bottom Footer */
+.footer-bottom {
+  background: linear-gradient(to right, #f500fd);
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+}
